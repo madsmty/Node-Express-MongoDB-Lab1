@@ -6,6 +6,18 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const app = (0, express_1.default)();
 const port = 3000;
+function checkJWT(req, res, next) {
+    console.log("Check JWT");
+    next();
+}
+;
+function logToDB(req, res, next) {
+    console.log("Write to MongoDB");
+    next();
+}
+;
+app.use(checkJWT);
+app.use(logToDB);
 app
     .route('/users')
     .get((req, res) => {
