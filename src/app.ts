@@ -1,30 +1,21 @@
 import express, {Application, NextFunction, Request, Response} from "express";
+import { logToDB } from "./middleware/logToDB";
+
 const app: Application = express();
 const port: number = 3000;
 
 const usersRoutes = require('./routes/users');
+const loginRoutes = require('./routes/login');
 
 
 // Implementar prettier, lodash si es que aplica
 
-
-function checkJWT(req: Request, res: Response, next: NextFunction) {
-    console.log("Check JWT"); 
-    console.log("- If JWT valid: next()");
-    console.log("- else, response status = 401")
-    next();
- };
-
-function logToDB(req: Request, res: Response, next: NextFunction) {
-   console.log("Write to MongoDB"); 
-   next();
-};
-
-app.use(checkJWT);
+//app.use(checkJWT);
 app.use(logToDB);
 
 app.use('/users', usersRoutes);
-
+app.use('/login', loginRoutes)
+//implementar error handling para rutas inexistentes
 
     
 app.listen(port, () => {

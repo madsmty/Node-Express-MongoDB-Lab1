@@ -18,8 +18,8 @@ function callExtAPI(url) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             const response = yield axios_1.default.get(url);
-            console.log(response);
-            return response;
+            console.log(response.data);
+            return response.data;
         }
         catch (error) {
             console.log(error);
