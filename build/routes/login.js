@@ -8,4 +8,6 @@ const express_1 = __importDefault(require("express"));
 const LoginController = require('../controllers/login');
 const router = express_1.default.Router();
 router.get('/', LoginController.get_jwt);
+router.get('/admin', LoginController.get_jwt_admin);
+router.get('/noUserId', LoginController.get_jwt_noUserId);
 module.exports = router;

@@ -13,14 +13,12 @@ const callExtAPI_1 = require("../services/callExtAPI");
 exports.users_get_all = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     const url = "https://jsonplaceholder.typicode.com/users/";
     const responseData = yield (0, callExtAPI_1.callExtAPI)(url);
-    console.log("Response", responseData);
+    // transform data to final format
+    // const finalArray = responseData.map()
+    //console.log("Response",responseData)
     res.status(200).json({
         responseData
     });
-    //callExtAPI(url);
-    console.log('GET /users');
-    console.log('- Transform result into desired format');
-    console.log('- Send response with transformed info');
     return res;
 });
 exports.users_get_posts_from_user = (req, res, next) => {
