@@ -1,10 +1,15 @@
-const users = {
-    "id": 1,
-    "prefix": "",
-    "firstName": "",
-    "lastName": "",
-    "email": "",
-    "address": "[Street] [Suite] [City] [ZipCode]",
-    "geolocation": "(lat, lang)",
-    "companyName": ""
-    }
+type finalUser = {
+    id: number,
+    prefix: string,
+    firstname: string,
+    lastName: string,
+    email: string,
+    address: string,
+    geolocation: string,
+    companyName: string
+};
+
+type finalUserArray ={
+    data: finalUser[];
+}; 
+   

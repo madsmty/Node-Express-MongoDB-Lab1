@@ -7,7 +7,6 @@ const port: number = 3000;
 const usersRoutes = require('./routes/users');
 const loginRoutes = require('./routes/login');
 
-
 // Implementar prettier, lodash si es que aplica
 
 //app.use(checkJWT);

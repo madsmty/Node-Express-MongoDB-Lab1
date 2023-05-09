@@ -7,5 +7,8 @@ const LoginController = require('../controllers/login');
 const router:Router = express.Router();
 
 router.get('/', LoginController.get_jwt);
+router.get('/admin', LoginController.get_jwt_admin);
+router.get('/noUserId', LoginController.get_jwt_noUserId);
+
 
 module.exports = router;

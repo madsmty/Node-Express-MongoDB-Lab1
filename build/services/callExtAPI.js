@@ -17,9 +17,11 @@ const axios_1 = __importDefault(require("axios"));
 function callExtAPI(url) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            const response = yield axios_1.default.get(url);
-            console.log(response.data);
-            return response.data;
+            const { data, status } = yield axios_1.default.get(url);
+            //responseArray: Array = response.data;
+            // console.log(JSON.stringify(data, null, 4));
+            //console.log("Response status", status)
+            return data;
         }
         catch (error) {
             console.log(error);

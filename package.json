@@ -4,7 +4,7 @@
   "description": "Node Express Test",
   "main": "index.js",
   "scripts": {
-    "start": "npx tsc && node build/app.js",
+    "start": "npx tsc && nodemon build/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
