@@ -9,6 +9,7 @@ exports.get_jwt = (req: Request, res: Response, next: NextFunction)=> {
     }, "SECRET"); // change that to an .env file
 
     console.log('Token:' + token);
-    res.status(200).json(token)
-    return token;
+    res.status(200).json({
+        token:token})
+    return res;
 };

@@ -1,8 +1,24 @@
 import express, { Router,NextFunction, Request, Response } from 'express';
+const jwt = require('jsonwebtoken');
 
-export function checkJWT(req: Request, res: Response, next: NextFunction) {
+module.exports = (req: Request ,res:Response,next: NextFunction) => {
     console.log("Check JWT"); 
-    console.log("- If JWT valid: next()");
-    console.log("- else, response status = 401")
-    next();
- };
+    try {
+        const token:string = req.headers.authorization?.split(" ")[1] || "";
+        console.log(token)
+        const decoded = jwt.verify(token,"SECRET"); //cambiar secret a .env
+        console.log(decoded);
+        if (decoded.userRole == "ADMIN" && decoded.userId) {
+            next();
+        }
+        else {
+            res.status(401).json({message:"Incorrect JWT"})
+        } 
+    }
+    catch {
+        console.log("JWT Error")
+        res.status(401).json({message:"Incorrect JWT"})
+    }    
+
+};
+

@@ -24,5 +24,5 @@ exports.users_get_posts_from_user = (req, res, next) => {
     console.log('- Filter result for specified UserId');
     console.log('- Transform result into desired format');
     console.log('- Send response with transformed info');
-    return res.sendStatus(200);
+    return res;
 };

@@ -1,6 +1,5 @@
 import express, { Router,NextFunction, Request, Response } from 'express';
-import { checkJWT } from "../middleware/checkJWT";
-
+const checkJWT = require ('../middleware/checkJWT');
 const UsersController = require('../controllers/users');
 
 const router:Router = express.Router();
