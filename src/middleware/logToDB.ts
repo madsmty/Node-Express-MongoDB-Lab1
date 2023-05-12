@@ -1,11 +1,8 @@
-import express, { Router,NextFunction, Request, Response } from 'express';
-import { LogEntry, logEntrySchema } from '../models/logEntry';
+import { NextFunction, Request, Response } from 'express';
+import { LogEntry } from '../models/logEntry';
 import jwt from 'jsonwebtoken';
+import { TokenInterface } from '../classes/token';
 
-export interface TokenInterface {
-    userId: string;
-    userRole: string;
-}
 
 export async function logToDB(req: Request, res: Response, next: NextFunction) {
     const now= new Date();

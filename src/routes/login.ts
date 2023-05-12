@@ -1,4 +1,4 @@
-// Not Login implementation really, just an endpoint to get the jwt
+// Not Login implementation really, just endpoints to get the jwt
 
 import express, { Router,NextFunction, Request, Response } from 'express';
 

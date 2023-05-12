@@ -1,11 +1,7 @@
-import express, { Router,NextFunction, Request, Response } from 'express';
+import { NextFunction, Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
-//const jwt = jwt;
+import { TokenInterface } from '../classes/token';
 
-export interface TokenInterface {
-       userId: string;
-       userRole: string;
-  }
 
 export const checkJWT = (req: Request ,res:Response,next: NextFunction) => {
     console.log("Check JWT"); 

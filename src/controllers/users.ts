@@ -1,15 +1,59 @@
 import express, { Router,NextFunction, Request, Response } from 'express';
 import {callExtAPI} from '../services/callExtAPI';
-import { AxiosResponse } from 'axios';
+import axios,{ AxiosResponse } from 'axios';
+import {UserArray, User} from '../models/users';
+
+
+interface ServerResponse {
+    data: [ServerData]
+}
+
+interface ServerData {
+    "id": number,
+    "name":string,
+    "username": string,
+    "email": string,
+    "address": {
+                "street": string,
+                "suite": string,
+                "city": string,
+                "zipcode": string,
+                "geo": {
+                    "lat":string,
+                    "lng":string       
+                }
+            },
+            "phone": string,
+            "website": string,
+            "company": {
+                "name": string,
+                "catchPhrase": string,
+                "bs":string
+            }
+        }
+
+
+//axios.interceptors.response.use((r: ServerResponse) => r.data);
 
 export const users_get_all = async (req: Request, res: Response, next: NextFunction)=>  {
     const url:string = "https://jsonplaceholder.typicode.com/users/";
-    const responseData: AxiosResponse  = await callExtAPI(url);
-    // transform data to final format
-    // const finalArray = responseData.map()
-    //console.log("Response",responseData)
+    try {
+        const resultArray:ServerResponse = await axios.request({
+            url:url,
+            //transformResponse: (r: ServerResponse) => r.data
+            //transformResponse: axios.defaults.transformResponse.concat((r: ServerResponse) => console.log(r.data))
+        });
+        console.log(resultArray.data);      
+        
+    }
+    catch(error) {
+        console.log(error);
+        throw new Error(`Error in 'users_get_all': ${error}`);
+    }
+    
     res.status(200).json({
-        responseData
+        //responseData
+        //userResponseArray
     }
     ); 
    return res;

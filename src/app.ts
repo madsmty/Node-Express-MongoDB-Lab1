@@ -7,12 +7,9 @@ import { loginRouter } from "./routes/login";
 const app: Application = express();
 const port: number = 3000;
 
-const usersRoutes = usersRouter;  //change to import
-const loginRoutes = loginRouter;  //change to import
+const usersRoutes = usersRouter;  
+const loginRoutes = loginRouter;  
 
-// Implementar prettier, lodash si es que aplica
-
-//app.use(checkJWT);
 app.use(logToDB);
 
 app.use('/users', usersRoutes);
