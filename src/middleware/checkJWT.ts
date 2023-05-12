@@ -1,12 +1,18 @@
 import express, { Router,NextFunction, Request, Response } from 'express';
-const jwt = require('jsonwebtoken');
+import jwt from 'jsonwebtoken';
+//const jwt = jwt;
 
-module.exports = (req: Request ,res:Response,next: NextFunction) => {
+export interface TokenInterface {
+       userId: string;
+       userRole: string;
+  }
+
+export const checkJWT = (req: Request ,res:Response,next: NextFunction) => {
     console.log("Check JWT"); 
     try {
         const token:string = req.headers.authorization?.split(" ")[1] || "";
         console.log(token)
-        const decoded = jwt.verify(token,"SECRET"); //cambiar secret a .env
+        const decoded = jwt.verify(token,"SECRET") as TokenInterface; //cambiar secret a .env
         console.log(decoded);
         if (decoded.userRole == "ADMIN" && decoded.userId) {
             next();

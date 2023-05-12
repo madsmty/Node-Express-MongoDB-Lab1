@@ -1,7 +1,8 @@
 import express, { Router,NextFunction, Request, Response } from 'express';
-const jwt = require('jsonwebtoken');
+import jwt from 'jsonwebtoken';
 
-exports.get_jwt = (req: Request, res: Response, next: NextFunction)=> {
+
+export const get_jwt = (req: Request, res: Response, next: NextFunction)=> {
    
     const token = jwt.sign( {
         userId:"mdeleon",
@@ -14,7 +15,7 @@ exports.get_jwt = (req: Request, res: Response, next: NextFunction)=> {
     return res;
 };
 
-exports.get_jwt_admin = (req: Request, res: Response, next: NextFunction)=> {
+export const get_jwt_admin = (req: Request, res: Response, next: NextFunction)=> {
    
     const token = jwt.sign( {
         userId:"mdeleon",
@@ -27,7 +28,7 @@ exports.get_jwt_admin = (req: Request, res: Response, next: NextFunction)=> {
     return res;
 };
 
-exports.get_jwt_noUserId = (req: Request, res: Response, next: NextFunction)=> {
+export const get_jwt_noUserId = (req: Request, res: Response, next: NextFunction)=> {
    
     const token = jwt.sign( {
         userRole:"ADMIN"

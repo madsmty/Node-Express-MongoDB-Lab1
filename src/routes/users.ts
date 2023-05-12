@@ -1,10 +1,10 @@
 import express, { Router,NextFunction, Request, Response } from 'express';
-const checkJWT = require ('../middleware/checkJWT');
-const UsersController = require('../controllers/users');
+import { checkJWT } from '../middleware/checkJWT';
+import { users_get_all, users_get_posts_from_user } from '../controllers/users';
 
-const router:Router = express.Router();
 
-router.get('/', checkJWT, UsersController.users_get_all);
-router.get('/:userId/posts',checkJWT, UsersController.users_get_posts_from_user);
+export const usersRouter:Router = express.Router();
+ 
+usersRouter.get('/', checkJWT, users_get_all);
+usersRouter.get('/:userId/posts',checkJWT, users_get_posts_from_user);
 
-module.exports = router;

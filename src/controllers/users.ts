@@ -2,7 +2,7 @@ import express, { Router,NextFunction, Request, Response } from 'express';
 import {callExtAPI} from '../services/callExtAPI';
 import { AxiosResponse } from 'axios';
 
-exports.users_get_all = async (req: Request, res: Response, next: NextFunction)=>  {
+export const users_get_all = async (req: Request, res: Response, next: NextFunction)=>  {
     const url:string = "https://jsonplaceholder.typicode.com/users/";
     const responseData: AxiosResponse  = await callExtAPI(url);
     // transform data to final format
@@ -15,7 +15,7 @@ exports.users_get_all = async (req: Request, res: Response, next: NextFunction)=
    return res;
 };
 
-exports.users_get_posts_from_user = (req: Request, res: Response, next: NextFunction) => {
+export const users_get_posts_from_user = (req: Request, res: Response, next: NextFunction) => {
     const url:string = `https://jsonplaceholder.typicode.com/users/${req.params.userId}/posts`;
     console.log(url);
     res.status(200).json({
