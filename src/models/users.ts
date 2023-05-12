@@ -1,4 +1,4 @@
-type finalUser = {
+export interface User {
     id: number,
     prefix: string,
     firstname: string,
@@ -9,7 +9,7 @@ type finalUser = {
     companyName: string
 };
 
-type finalUserArray ={
-    data: finalUser[];
+export interface UserArray{
+    data: User[];
 }; 
    

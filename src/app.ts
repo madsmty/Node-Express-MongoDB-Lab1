@@ -21,7 +21,7 @@ app.use('/login', loginRoutes)
 
 const start = async () => {
     try {
-        await connect("mongodb://127.0.0.1:27017");
+        await connect("mongodb://127.0.0.1:27017/logs");
         app.listen(3000,() => console.log("Server started on port 3000"))
     }
     catch (error){
