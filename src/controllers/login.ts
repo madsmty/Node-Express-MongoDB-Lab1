@@ -1,6 +1,7 @@
 import express, { Router,NextFunction, Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
 
+//Cambiar a clases
 
 export const get_jwt = (req: Request, res: Response, next: NextFunction)=> {
    // JWT with regular user role

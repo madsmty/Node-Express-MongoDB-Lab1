@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from 'express';
 import { LogEntry } from '../models/logEntry';
 import jwt from 'jsonwebtoken';
-import { TokenInterface } from '../classes/token';
+import { TokenInterface } from '../interfaces/token';
 
 
 export async function logToDB(req: Request, res: Response, next: NextFunction) {
@@ -15,6 +15,6 @@ export async function logToDB(req: Request, res: Response, next: NextFunction) {
         dateCreated: now,
     });
     await logEntry.save();
-    console.log(logEntry); 
+    console.log("- Logged to DB"); 
     next();
  };

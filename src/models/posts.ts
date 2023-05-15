@@ -1,8 +1,8 @@
     export interface Posts {
-       userId: string,
+       userId: number,
        name: string, // firstname + lastName
        email: string, // userEmail
-       postId: string, // postId
+       postId: number, // postId
        title: string ,
        body: string,
     }

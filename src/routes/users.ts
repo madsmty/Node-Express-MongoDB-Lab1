@@ -1,9 +1,10 @@
 import express, { Router,NextFunction, Request, Response } from 'express';
-import { checkJWT } from '../middleware/checkJWT';
-import { users_get_all, users_get_posts_from_user } from '../controllers/users';
+import { jwtValidator } from '../middleware/checkJWT';
+import { getUserHandler } from '../handlers/user';
+import { getPostsFromUserHandler } from '../handlers/post';
 
 export const usersRouter:Router = express.Router();
  
-usersRouter.get('/', checkJWT, users_get_all);
-usersRouter.get('/:userId/posts',checkJWT, users_get_posts_from_user);
+usersRouter.get('/',jwtValidator, getUserHandler);
+usersRouter.get('/:userId/posts',jwtValidator, getPostsFromUserHandler);
 
