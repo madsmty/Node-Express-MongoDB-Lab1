@@ -2,11 +2,11 @@
 
 import express, { Router,NextFunction, Request, Response } from 'express';
 
-import {get_jwt, get_jwt_admin, get_jwt_noUserId}  from '../controllers/login';
+import {loginUserHandler, loginAdminHandler, loginNoUserIdHandler}  from '../handlers/login';
 
 export const loginRouter:Router = express.Router();
 
-loginRouter.get('/', get_jwt);
-loginRouter.get('/admin', get_jwt_admin);
-loginRouter.get('/noUserId', get_jwt_noUserId);
+loginRouter.get('/', loginUserHandler);
+loginRouter.get('/admin', loginAdminHandler);
+loginRouter.get('/noUserId', loginNoUserIdHandler);
 

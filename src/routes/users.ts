@@ -1,5 +1,5 @@
 import express, { Router,NextFunction, Request, Response } from 'express';
-import { jwtValidator } from '../middleware/checkJWT';
+import { jwtValidator } from '../middleware/jwtValidator';
 import { getUserHandler } from '../handlers/user';
 import { getPostsFromUserHandler } from '../handlers/post';
 
