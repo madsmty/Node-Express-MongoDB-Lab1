@@ -1,15 +1,14 @@
 export interface User {
-    id: number,
-    prefix: string,
-    firstName: string,
-    lastName: string,
-    email: string,
-    address: string,
-    geolocation: string,
+    id: number
+    prefix: string
+    firstName: string
+    lastName: string
+    email: string
+    address: string
+    geolocation: string
     companyName: string
-};
+}
 
-export interface UserArray{
-    data: User[];
-}; 
-   
+export interface UserArray {
+    data: User[]
+}

@@ -1,5 +1,4 @@
-
 export interface TokenInterface {
-    userId: string;
-    userRole: string;
+    userId: string
+    userRole: string
 }

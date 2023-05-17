@@ -1,6 +1,5 @@
-import { ServerUserData } from "./serverUserData"
+import { ServerUserData } from './serverUserData'
 
 export interface ServerUserElement {
-      data: ServerUserData
-  }
-  
+    data: ServerUserData
+}

@@ -1,6 +1,5 @@
-import { ServerPostData } from "./serverPostData"
+import { ServerPostData } from './serverPostData'
 
 export interface ServerPostArray {
-      data: [ServerPostData]
-  }
-  
+    data: [ServerPostData]
+}

@@ -1,6 +1,5 @@
-import { ServerUserData } from "./serverUserData"
+import { ServerUserData } from './serverUserData'
 
 export interface ServerUserArray {
-      data: [ServerUserData]
-  }
-  
+    data: [ServerUserData]
+}
