@@ -36,19 +36,9 @@ export class UserController {
                 lastName,
                 email: element.email,
                 address:
-                    element.address.street +
-                    ' ' +
-                    element.address.suite +
-                    ' ' +
-                    element.address.city +
-                    ' ' +
-                    element.address.zipcode,
+                    `${element.address.street} ${element.address.suite} ${element.address.city} ${element.address.zipcode}`,
                 geolocation:
-                    '(' +
-                    element.address.geo.lat +
-                    ', ' +
-                    element.address.geo.lng +
-                    ')',
+                    `(${element.address.geo.lat},${element.address.geo.lng})`,
                 companyName: element.company.name,
             }
             //userMap.id = element.id
@@ -58,7 +48,7 @@ export class UserController {
     }
 
     async getAll(): Promise<boolean> {
-        const url: string = this.domain + 'users/'
+        const url = `${this.domain}users/`
         let functionStatus = true
         let responseArray: Array<unknown>
         //let userId:number = 1;

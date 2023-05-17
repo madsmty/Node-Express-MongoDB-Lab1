@@ -22,7 +22,7 @@ export class LoginController {
             'SECRET'
         ) // change that to an .env file
 
-        console.log('Token:' + token)
+        console.log(`Token: ${token}`)
         this.res.status(200).json({
             token: token,
         })
@@ -39,7 +39,7 @@ export class LoginController {
             'SECRET'
         ) // change that to an .env file
 
-        console.log('Token:' + token)
+        console.log(`Token: ${token}`)
         this.res.status(200).json({
             token: token,
         })
@@ -55,7 +55,7 @@ export class LoginController {
             'SECRET'
         ) // change that to an .env file
 
-        console.log('Token:' + token)
+        console.log(`Token: ${token}`)
         this.res.status(200).json({
             token: token,
         })

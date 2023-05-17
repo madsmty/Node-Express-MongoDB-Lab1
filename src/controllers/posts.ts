@@ -34,7 +34,7 @@ export class PostController {
 
             const postMap: Posts = {
                 userId: element.userId,
-                name: firstName + ' ' + lastName,
+                name: `${firstName} ${lastName}`,
                 email: paramUser.data.email,
                 postId: element.id,
                 title: element.title,
@@ -48,12 +48,10 @@ export class PostController {
 
     async getUserPosts(): Promise<boolean> {
         const userId: string = this.req.params.userId
-        const userUrl: string = this.domain + 'users/' + userId
-        //const userUrl:string = this.domain + "users?id=" + userId;
-        const postUrl: string = this.domain + 'users/' + userId + '/posts'
+        const userUrl = `${this.domain}users/${userId}`
+        const postUrl = `${this.domain}users/${userId}/posts`
         let functionStatus = true
         let responseArray: Array<unknown>
-        //responseArray.data = [];
         try {
             console.log('- API Call')
             const resultUser: ServerUserElement = await axios.request({
