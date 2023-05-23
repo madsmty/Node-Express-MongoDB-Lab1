@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "npx nodemon",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha",
     "lint": "eslint . --ext .ts"
   },
   "author": "",
@@ -22,7 +22,9 @@
     "@types/node": "^18.16.3",
     "@typescript-eslint/eslint-plugin": "^5.59.6",
     "@typescript-eslint/parser": "^5.59.6",
+    "chai": "^4.3.7",
     "eslint": "^8.40.0",
+    "mocha": "^10.2.0",
     "nodemon": "^2.0.22",
     "prettier": "^2.8.8",
     "ts-node": "^10.9.1",
