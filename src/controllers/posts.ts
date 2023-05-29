@@ -17,7 +17,7 @@ export class PostController {
     convertPosts(
         paramUser: ServerUserElement,
         paramPostArray: ServerPostArray
-    ): Array<unknown> {
+    ): Array<Posts> {
         //console.log(paramUserArray.address)
         const responseArray = paramPostArray.data.map((element) => {
             const nameSeparator = paramUser.data.name.split(' ')

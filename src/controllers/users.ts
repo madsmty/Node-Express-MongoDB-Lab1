@@ -13,7 +13,7 @@ export class UserController {
         this.req = req
     }
 
-    convertName(paramArray: ServerUserArray): Array<unknown> {
+    convertName(paramArray: ServerUserArray): Array<User> {
         const responseArray = paramArray.data.map((element) => {
             const nameSeparator = element.name.split(' ')
             let prefix = ''
@@ -50,7 +50,7 @@ export class UserController {
     async getAll(): Promise<boolean> {
         const url = `${this.domain}users/`
         let functionStatus = true
-        let responseArray: Array<unknown>
+        let responseArray: Array<User>
         //let userId:number = 1;
         //responseArray.data = [];
         try {
