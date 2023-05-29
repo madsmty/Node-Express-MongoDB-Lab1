@@ -22,13 +22,23 @@ export class LogController {
         const now = new Date()
         const token: string =
             this.req.headers.authorization?.split(' ')[1] || ''
+           
+
+            try {
+                decoded = jwt.verify(token, 'SECRET') as TokenInterface
+            }
+            catch{
+                decoded = {userRole:"Guest",userId:"NoUserId"}
+            }
+
+            /*
             if (token !== '')
 {
      decoded = jwt.verify(token, 'SECRET') as TokenInterface //cambiar secret a .env
 }        else
 {
      decoded = {userRole:"Guest",userId:"NoUserId"}
-}
+} */
 
         const logEntry = new LogEntry({
             resourceAccessed: this.req.url,

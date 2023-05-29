@@ -5,5 +5,5 @@ import { getPostsFromUserHandler } from '../handlers/post'
 
 export const usersRouter: Router = express.Router()
 
-usersRouter.get('/', jwtValidator, getUserHandler)
+usersRouter.get('/',jwtValidator, getUserHandler)
 usersRouter.get('/:userId/posts', jwtValidator, getPostsFromUserHandler)

@@ -10,9 +10,9 @@ export const jwtValidator = (
     console.log('Check JWT')
     try {
         const token: string = req.headers.authorization?.split(' ')[1] || ''
-        //console.log(token)
+        console.log(token)
         const decoded = jwt.verify(token, 'SECRET') as TokenInterface //cambiar secret a .env
-        //console.log(decoded);
+        console.log(decoded);
         if (decoded.userRole == 'ADMIN' && decoded.userId) {
             console.log('- Token passed')
             next()

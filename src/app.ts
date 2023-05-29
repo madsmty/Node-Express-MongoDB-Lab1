@@ -6,7 +6,7 @@ import { connect } from 'mongoose'
 import { usersRouter } from './routes/users'
 import { loginRouter } from './routes/login'
 
-const app: Application = express()
+export const app: Application = express()
 const port = 3000
 
 const usersRoutes = usersRouter
@@ -30,4 +30,4 @@ const start = async () => {
 
 start()
 
-module.exports = app
+export default app
