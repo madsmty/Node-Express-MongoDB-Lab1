@@ -19,6 +19,7 @@ describe('Users', () => {
                 .set({ Authorization: `Bearer ${token}` })
                 .end((err, res) => {
                     res.should.have.status(401)
+                    res.body.should.have.property('message','Incorrect JWT')
                     done()
                 })
         })
@@ -52,6 +53,7 @@ describe('Users', () => {
                 .set({ Authorization: `Bearer ${token}` })
                 .end((err, res) => {
                     res.should.have.status(401)
+                    res.body.should.have.property('message','Incorrect JWT')
                     done()
                 })
         })
@@ -67,6 +69,7 @@ describe('Users', () => {
                 .set({ Authorization: `Bearer ${token}` })
                 .end((err, res) => {
                     res.should.have.status(401)
+                    res.body.should.have.property('message','Incorrect JWT')
                     done()
                 })
         })
@@ -78,6 +81,7 @@ describe('Users', () => {
                 .get('/users')
                 .end((err, res) => {
                     res.should.have.status(401)
+                    res.body.should.have.property('message','Incorrect JWT')
                     done()
                 })
         })
