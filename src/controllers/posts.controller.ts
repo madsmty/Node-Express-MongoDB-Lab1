@@ -30,9 +30,7 @@ export class PostController {
             const resultPostArray: ServerPostArray = await axios.request({
                 url: postUrl,
             })
-            //console.log(resultUserArray.data.name);
             const responseArray = postFactory.convertPosts(resultUser, resultPostArray)
-            //console.log(responseArray)
             console.log('Post Response Sent')
             this.res.status(200).json(responseArray)
         } catch (error) {

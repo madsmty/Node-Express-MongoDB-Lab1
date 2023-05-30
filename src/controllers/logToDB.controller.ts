@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from 'express'
-import { LogEntry } from '../models/logEntry'
+import { LogEntry } from '../models/logEntry.model'
 import jwt from 'jsonwebtoken'
 import { TokenInterface } from '../interfaces/token'
 

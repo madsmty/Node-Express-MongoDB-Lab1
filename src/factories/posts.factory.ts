@@ -1,4 +1,4 @@
-import { Posts } from '../models/posts'
+import { Posts } from '../models/posts.model'
 import { ServerPostArray } from '../interfaces/serverPostArray'
 import { ServerUserElement } from '../interfaces/serverUserElement'
 
@@ -7,7 +7,6 @@ export class PostsFactory {
         paramUser: ServerUserElement,
         paramPostArray: ServerPostArray
     ): Array<Posts> => {
-         //console.log(paramUserArray.address)
       const responseArray = paramPostArray.data.map((element) => {
         const nameSeparator = paramUser.data.name.split(' ')
         let firstName = ''
@@ -29,7 +28,6 @@ export class PostsFactory {
             title: element.title,
             body: element.body,
         }
-        //userMap.id = element.id
         return postMap
     })
     return responseArray

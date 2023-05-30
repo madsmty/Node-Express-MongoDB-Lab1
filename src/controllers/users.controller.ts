@@ -1,8 +1,8 @@
 import { Request, Response } from 'express'
 import axios from 'axios'
 import { ServerUserArray } from '../interfaces/serverUserArray'
-import { User } from '../models/users'
-import {usersFactory} from '../factories/users.factory'
+import { User } from '../models/users.model'
+import {UsersFactory} from '../factories/users.factory'
 
 export class UserController {
     domain = 'https://jsonplaceholder.typicode.com/'
@@ -18,14 +18,13 @@ export class UserController {
         const url = `${this.domain}users/`
         let functionStatus = true
         let responseArray: Array<User>
-        //let userId:number = 1;
-        //responseArray.data = [];
+        const usersFactory = new UsersFactory()
         try {
             console.log('- API Call')
             const resultArray: ServerUserArray = await axios.request({
                 url,
             })
-            responseArray = usersFactory(resultArray)
+            responseArray = usersFactory.convertNames(resultArray)
 
             console.log('Response Sent')
             this.res.status(200).json(responseArray)
