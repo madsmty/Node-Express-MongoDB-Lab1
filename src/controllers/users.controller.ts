@@ -2,7 +2,7 @@ import { Request, Response } from 'express'
 import axios from 'axios'
 import { ServerUserArray } from '../interfaces/serverUserArray'
 import { User } from '../models/users.model'
-import {UsersFactory} from '../factories/users.factory'
+import { UsersFactory } from '../factories/users.factory'
 
 export class UserController {
     domain = 'https://jsonplaceholder.typicode.com/'

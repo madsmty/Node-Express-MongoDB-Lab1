@@ -14,8 +14,6 @@ export class PostController {
         this.req = req
     }
 
-
-
     async getUserPosts(): Promise<boolean> {
         const userId: string = this.req.params.userId
         const userUrl = `${this.domain}users/${userId}`
@@ -30,7 +28,10 @@ export class PostController {
             const resultPostArray: ServerPostArray = await axios.request({
                 url: postUrl,
             })
-            const responseArray = postFactory.convertPosts(resultUser, resultPostArray)
+            const responseArray = postFactory.convertPosts(
+                resultUser,
+                resultPostArray
+            )
             console.log('Post Response Sent')
             this.res.status(200).json(responseArray)
         } catch (error) {

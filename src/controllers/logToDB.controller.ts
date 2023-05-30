@@ -7,7 +7,6 @@ export class LogController {
     res: Response
     req: Request
     next: NextFunction
-    
 
     constructor(req: Request, res: Response, next: NextFunction) {
         this.res = res
@@ -15,23 +14,17 @@ export class LogController {
         this.next = next
     }
 
-    
-
     async logToDB() {
-        let decoded:TokenInterface;
+        let decoded: TokenInterface
         const now = new Date()
         const token: string =
             this.req.headers.authorization?.split(' ')[1] || ''
-           
 
-            try {
-                decoded = jwt.verify(token, 'SECRET') as TokenInterface
-            }
-            catch{
-                decoded = {userRole:"Guest",userId:"NoUserId"}
-            }
-
-
+        try {
+            decoded = jwt.verify(token, 'SECRET') as TokenInterface
+        } catch {
+            decoded = { userRole: 'Guest', userId: 'NoUserId' }
+        }
 
         const logEntry = new LogEntry({
             resourceAccessed: this.req.url,

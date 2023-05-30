@@ -1,4 +1,4 @@
-import  { Request, Response } from 'express'
+import { Request, Response } from 'express'
 import jwt from 'jsonwebtoken'
 
 //Cambiar a clases
