@@ -2,7 +2,7 @@ import { Request, Response } from 'express'
 import axios from 'axios'
 import { ServerUserArray } from '../interfaces/serverUserArray'
 import { User } from '../models/users'
-import {convertName} from '../factories/users'
+import {usersFactory} from '../factories/users.factory'
 
 export class UserController {
     domain = 'https://jsonplaceholder.typicode.com/'
@@ -25,7 +25,7 @@ export class UserController {
             const resultArray: ServerUserArray = await axios.request({
                 url,
             })
-            responseArray = convertName(resultArray)
+            responseArray = usersFactory(resultArray)
 
             console.log('Response Sent')
             this.res.status(200).json(responseArray)

@@ -1,4 +1,4 @@
-import { PostController } from '../controllers/posts'
+import { PostController } from '../controllers/posts.controller'
 import { Request, Response } from 'express'
 
 export const getPostsFromUserHandler = (req: Request, res: Response) => {

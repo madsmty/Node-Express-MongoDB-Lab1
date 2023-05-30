@@ -2,7 +2,7 @@ import { Request, Response } from 'express'
 import axios from 'axios'
 import { ServerPostArray } from '../interfaces/serverPostArray'
 import { ServerUserElement } from '../interfaces/serverUserElement'
-import { convertPosts } from '../factories/posts'
+import { PostsFactory } from '../factories/posts.factory'
 
 export class PostController {
     domain = 'https://jsonplaceholder.typicode.com/'
@@ -21,7 +21,7 @@ export class PostController {
         const userUrl = `${this.domain}users/${userId}`
         const postUrl = `${this.domain}users/${userId}/posts`
         let functionStatus = true
-        let responseArray: Array<unknown>
+        const postFactory = new PostsFactory()
         try {
             console.log('- API Call')
             const resultUser: ServerUserElement = await axios.request({
@@ -31,7 +31,7 @@ export class PostController {
                 url: postUrl,
             })
             //console.log(resultUserArray.data.name);
-            responseArray = convertPosts(resultUser, resultPostArray)
+            const responseArray = postFactory.convertPosts(resultUser, resultPostArray)
             //console.log(responseArray)
             console.log('Post Response Sent')
             this.res.status(200).json(responseArray)

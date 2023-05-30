@@ -1,7 +1,7 @@
 import { ServerUserArray } from '../interfaces/serverUserArray'
 import { User } from '../models/users'
 
-export const convertName = (paramArray: ServerUserArray): Array<User> => {
+export const usersFactory = (paramArray: ServerUserArray): Array<User> => {
       const responseArray = paramArray.data.map((element) => {
           const nameSeparator = element.name.split(' ')
           let prefix = ''

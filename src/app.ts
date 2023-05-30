@@ -3,8 +3,8 @@ dotenv.config()
 import express, { Application } from 'express'
 import { logToDB } from './middleware/logToDB'
 import { connect } from 'mongoose'
-import { usersRouter } from './routes/users'
-import { loginRouter } from './routes/login'
+import { usersRouter } from './routes/users.routes'
+import { loginRouter } from './routes/login.routes'
 
 export const app: Application = express()
 const port = 3000

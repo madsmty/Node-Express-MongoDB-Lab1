@@ -31,14 +31,7 @@ export class LogController {
                 decoded = {userRole:"Guest",userId:"NoUserId"}
             }
 
-            /*
-            if (token !== '')
-{
-     decoded = jwt.verify(token, 'SECRET') as TokenInterface //cambiar secret a .env
-}        else
-{
-     decoded = {userRole:"Guest",userId:"NoUserId"}
-} */
+
 
         const logEntry = new LogEntry({
             resourceAccessed: this.req.url,
