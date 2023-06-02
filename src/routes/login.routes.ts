@@ -6,7 +6,7 @@ import {
     loginUserHandler,
     loginAdminHandler,
     loginNoUserIdHandler,
-} from '../handlers/login'
+} from '../handlers/login.handler'
 
 export const loginRouter: Router = express.Router()
 

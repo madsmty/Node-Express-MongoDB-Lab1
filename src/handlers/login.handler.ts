@@ -1,4 +1,4 @@
-import { LoginController } from '../controllers/login'
+import { LoginController } from '../controllers/login.controller'
 import { Request, Response } from 'express'
 
 export const loginUserHandler = (req: Request, res: Response) => {

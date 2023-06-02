@@ -1,10 +1,12 @@
+import * as dotenv from 'dotenv'
+dotenv.config()
 import express, { Application } from 'express'
 import { logToDB } from './middleware/logToDB'
 import { connect } from 'mongoose'
-import { usersRouter } from './routes/users'
-import { loginRouter } from './routes/login'
+import { usersRouter } from './routes/users.routes'
+import { loginRouter } from './routes/login.routes'
 
-const app: Application = express()
+export const app: Application = express()
 const port = 3000
 
 const usersRoutes = usersRouter
@@ -19,7 +21,11 @@ app.use('/login', loginRoutes)
 const start = async () => {
     try {
         await connect('mongodb://127.0.0.1:27017/logs')
-        app.listen(3000, () => console.log(`Server started on port:${port}`))
+        app.listen(3000, () =>
+            console.log(
+                `Server started on port:${port}. NODE_ENV:${process.env.NODE_ENV}`
+            )
+        )
     } catch (error) {
         console.error(error)
         process.exit(1)
@@ -28,4 +34,4 @@ const start = async () => {
 
 start()
 
-module.exports = app
+export default app

@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from 'express'
-import { LogEntry } from '../models/logEntry'
+import { LogEntry } from '../models/logEntry.model'
 import jwt from 'jsonwebtoken'
 import { TokenInterface } from '../interfaces/token'
 
@@ -15,10 +15,16 @@ export class LogController {
     }
 
     async logToDB() {
+        let decoded: TokenInterface
         const now = new Date()
         const token: string =
             this.req.headers.authorization?.split(' ')[1] || ''
-        const decoded = jwt.verify(token, 'SECRET') as TokenInterface //cambiar secret a .env
+
+        try {
+            decoded = jwt.verify(token, 'SECRET') as TokenInterface
+        } catch {
+            decoded = { userRole: 'Guest', userId: 'NoUserId' }
+        }
 
         const logEntry = new LogEntry({
             resourceAccessed: this.req.url,
