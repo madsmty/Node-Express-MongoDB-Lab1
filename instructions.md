@@ -13,7 +13,7 @@ In this lab, you will learn to setup an ExpressJs server and connect to a MongoD
 4. Download and install Git from this link: https://git-scm.com/downloads
 
 ## Build Instructions
-1. Clone this Git repository locally
+1. Fork this Git repository locally
 2. Open the repository in Spring Tool Suite by going to File/Open Projects From File System
 3. Navigate to the com.example.demo.exercise package. You'll see the Rectangle, Triangle, and Circle classes. Model them based on this diagram and overview:
 
