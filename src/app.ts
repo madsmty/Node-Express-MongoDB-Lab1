@@ -1,10 +1,8 @@
-import express, {Application, NextFunction, Request, Response} from "express";
+import express, {Application } from "express";
 import {connect} from "mongoose";
 
 const app: Application = express();
 const port: number = 3000;
-
-
 
 const start = async () => {
     try {
