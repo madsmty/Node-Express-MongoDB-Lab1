@@ -1,6 +1,6 @@
-# MongoDB Database REST API Lab I
+# MongoDB Database REST API 
 
-## Setup and Connecting to MongoDB
+## Lab I - Setup and Connecting to MongoDB
 
 ### Overview
 
