@@ -32,8 +32,8 @@ The test should pass and coverage should be 100%
 Please provide a screenshot of the test passing
 
 ## Helpful Resources
-[NodeJS](https://nodejs.org/)
-TypeScript - https://www.typescriptlang.org/
-ExpressJs - https://expressjs.com/
-MongoDB - https://www.mongodb.com/
-Mocha - https://mochajs.org/
+- [NodeJS - https://nodejs.org/](https://nodejs.org/)
+- [TypeScript - https://www.typescriptlang.org/](https://www.typescriptlang.org/)
+- [ExpressJs - https://expressjs.com/](https://expressjs.com/)
+- [MongoDB - https://www.mongodb.com/](https://www.mongodb.com/)
+- [Mocha - https://mochajs.org/](https://mochajs.org/)
