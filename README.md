@@ -6,6 +6,11 @@ This lab is the 1st. part in a series, focused in understanding how to implement
 
 Lab I consists in setting up the database, and succesfully connect to it.
 
+Runtime: NodeJS
+Framework: ExpressJs
+Language: TypeScript
+Testing: Mocha/Chai
+
 [Instructions](./instructions.md)
 
 Lab series:
