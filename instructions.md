@@ -20,34 +20,20 @@ In this lab, you will learn to setup an ExpressJs server and connect to a MongoD
 
 ## Tasks / Instuctions
 
-Run the code by typing 'npm run start'. if all the dependencies where correctly installed, you should se
-
-Diagram
-alt text
-
-
-### Example [Optional]
+Run the code by typing 'npm run start'. 
+If all the dependencies where correctly installed, you should see the following message: 'Server started on port:3000'
 
 ## Testing and Validation requisites
-Go to the com.example.demo package in the test packages, open the ObjectOrientedIntroduction2ApplicationTests class, and then go to Run/Run As/JUnit Test.
-Coverage should be 100%
+
+There is one Mocha test that checks if the server ran correctly. To perform the test, type "npm run test" on the command prompt.
+The test should pass and coverage should be 100%
 
 ## Acceptance Criteria
-Please provide a screenshot
+Please provide a screenshot of the test passing
 
-## Helpful ResourcesO  **AComodar las ligas con los puntos de abajo
-Object-Oriented Programming Concepts (Oracle): https://docs.oracle.com/javase/tutorial/java/concepts/
-
-What is Object Orientation? (Pluralsight): https://app.pluralsight.com/ilx/video-courses/86714d19-8b08-404a-b24e-7fcff53fa426/af09bc2c-9029-42e9-8192-c12ebf543666/048dcc2a-2560-41a0-9884-8c96f5de009b
-
-Working with Classes and Interfaces in Java 11 (Pluralsight): https://app.pluralsight.com/library/courses/working-classes-interfaces-java/table-of-contents
-
-Math Class in Java (Oracle): https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html
-
-[Optional]
-### Official Language/Framework/Library Documentation 
-### Main concepts (Databases, Object Oriented Programming, Classes, Polymorphism, etc)
-### Blog articles, samples
-### Public repositories
-### Video tutorials
- 
+## Helpful Resources
+[NodeJS](https://nodejs.org/)
+TypeScript - https://www.typescriptlang.org/
+ExpressJs - https://expressjs.com/
+MongoDB - https://www.mongodb.com/
+Mocha - https://mochajs.org/
