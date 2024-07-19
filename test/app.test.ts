@@ -7,18 +7,23 @@ import app from '../src/app'
 chai.use(chaiHttp)
 chai.should()
 
-before( () =>
+before( (done) =>
     {
-      app.on("appStarted", function()
+    app.on("appStarted", function()
       {
         console.log("Server Started Correctly")
-        //done()
+        true.should.equal(true)
+        done()
+      })
+      app.on("appError", function()
+      {
+        console.log("Server could not start")
+        true.should.equal(false)
+        done()
       })
     })
 
 describe('Test if server is running correctly',() => {
     it('', (done) => {
-
         done() })
 })
-  

@@ -16,7 +16,9 @@ const start = async () => {
         )
     } catch (error) {
         console.error(error)
+        app.emit('appError')
         process.exit(1)
+        
     }
 }
 
