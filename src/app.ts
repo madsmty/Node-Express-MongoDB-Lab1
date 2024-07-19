@@ -1,22 +1,8 @@
-import * as dotenv from 'dotenv'
-dotenv.config()
-import express, { Application } from 'express'
-import { logToDB } from './middleware/logToDB'
-import { connect } from 'mongoose'
-import { usersRouter } from './routes/users.routes'
-import { loginRouter } from './routes/login.routes'
+import express, {Application } from "express";
+import {connect} from "mongoose";
 
-export const app: Application = express()
-const port = 3000
-
-const usersRoutes = usersRouter
-const loginRoutes = loginRouter
-
-app.use(logToDB)
-
-app.use('/users', usersRoutes)
-app.use('/login', loginRoutes)
-//implementar error handling para rutas inexistentes
+const app: Application = express();
+const port: number = 3000;
 
 const start = async () => {
     try {
