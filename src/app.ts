@@ -6,16 +6,18 @@ const port: number = 3000;
 
 const start = async () => {
     try {
-        await connect("mongodb://127.0.0.1:27017");
-        app.listen(3000,() => console.log("Server started on port 3000"))
-    }
-    catch (error){
-
-    console.error(error);
-    process.exit(1);
+        await connect('mongodb://127.0.0.1:27017/logs')
+        app.listen(3000, () =>
+            console.log(
+                `Server started on port:${port}. NODE_ENV:${process.env.NODE_ENV}`
+            )
+        )
+    } catch (error) {
+        console.error(error)
+        process.exit(1)
     }
 }
 
-start();
+start()
 
-module.exports = app;
+export default app
